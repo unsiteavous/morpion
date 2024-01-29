@@ -55,6 +55,10 @@ body {
     text-align: center;
 }
 
+.none {
+    display: none !important;
+}
+
 .hidden {
     visibility: hidden;
 }
@@ -79,7 +83,7 @@ body {
     background-color: #d9f3ff;
 }
 
-#message {
+#message, #prenoms {
     z-index: 100;
     height: 200px;
     border-width: 10px;
@@ -99,14 +103,26 @@ body {
     opacity: 1;
 }
 
+#prenoms {
+    border-color: grey;
+    background-color: whitesmoke;
+    display: block;
+}
+
+#contenuMessage, #nomJoueur1, #nomJoueur2 {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
 .bouton:hover
 {
   font-weight: bold;
   border-width: 3px;
   transform: scale(1.05);
 }
-.bouton
-{
+.bouton {
   cursor: pointer;
   border: 2px solid goldenrod;
     border-top-width: 2px;
@@ -122,4 +138,18 @@ body {
 body > p {
   text-align: right;
   margin-right: 10px;
+}
+
+#closeMessage {
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  font-size: 30px;
+  transition: 0.5s;
+}
+
+#closeMessage:hover {
+  transform: rotate(365deg);
 }

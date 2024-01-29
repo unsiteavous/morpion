@@ -1,7 +1,12 @@
 "use strict";
+let nomJoueur1;
+let nomJoueur2;
+const encartNomJoueur1 = document.getElementById('nomJoueur1');
+const encartNomJoueur2 = document.getElementById('nomJoueur2');
 const joueur1 = document.getElementById('joueur1');
 const joueur2 = document.getElementById('joueur2');
 const message = document.getElementById('message');
+const contenuMessage = document.getElementById('contenuMessage');
 let joueur = 1;
 let morpion = [
     [0, 0, 0],
@@ -19,6 +24,20 @@ let solutions = [
     ["02", "11", "20"],
 ]
 
+function enregistrerPrenom(numeroJoueur) {
+    if (numeroJoueur === 1) {
+        nomJoueur1 = document.getElementById('valeurJoueur1').value;
+        encartNomJoueur1.classList.add('none');
+        encartNomJoueur2.classList.remove('none');
+    } else if (numeroJoueur === 2) {
+        nomJoueur2 = document.getElementById('valeurJoueur2').value;
+        document.getElementById('prenoms').classList.add('none');
+        document.getElementById('plateau').classList.remove('invisible');
+        joueur1.querySelector('h2').innerHTML = nomJoueur1;
+        joueur2.querySelector('h2').innerHTML = nomJoueur2;
+    }
+
+}
 
 function selectCase(idCase) {
     animationClic(idCase);
@@ -30,16 +49,12 @@ function selectCase(idCase) {
     victoire();
 }
 
-
-
 function animationClic(idCase) {
     document.getElementById(idCase).classList.toggle('clicked');
     setTimeout(() => {
         document.getElementById(idCase).classList.toggle('clicked');
     }, 200)
 }
-
-
 
 function enregistrerPion(idCase, joueur, ligne, colonne) {
     // On vérifie avant de placer le pion, que le joueur peut bien jouer.
@@ -49,7 +64,7 @@ function enregistrerPion(idCase, joueur, ligne, colonne) {
             placerPionPlateau(joueur, idCase);
         } else {
             console.log("Cette case est déjà remplie");
-            message.innerHTML = "<h3>Cette case est déjà remplie.</h3>";
+            contenuMessage.innerHTML = "<h3>Cette case est déjà remplie.</h3>";
             message.classList.replace('invisible', 'erreur');
             setTimeout(() => {
                 message.classList.replace('erreur', 'invisible');
@@ -58,7 +73,6 @@ function enregistrerPion(idCase, joueur, ligne, colonne) {
 
     }
 }
-
 
 function verifierToutesCasesRemplies() {
     let rempli = true;
@@ -85,12 +99,13 @@ function victoire() {
             victoire += morpion[ligneMorpion][colonneMorpion];
 
         }
+        console.log(victoire)
         if (victoire === "111") {
             afficherVictoire('1');
             matchNul = false;
             break dance;
         } else if (victoire === "222") {
-            afficherVictoire('1');
+            afficherVictoire('2');
             matchNul = false;
             break dance;
         }
@@ -100,7 +115,7 @@ function victoire() {
         // On vérifie après que le joueur ait joué, pour savoir si c'était la dernière case vide.
         joueur1.style.visibility = "hidden";
         joueur2.style.visibility = "hidden";
-        message.innerHTML = "<h3>Match nul !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>";
+        contenuMessage.innerHTML = "<h3>Match nul !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>";
         message.classList.replace('invisible', 'info');
     }
 }
@@ -114,7 +129,6 @@ function placerPionPlateau(joueur, selectedCase) {
 
     }
 }
-
 
 function changerJoueur(joueur) {
     if (joueur === 1) {
@@ -130,8 +144,14 @@ function changerJoueur(joueur) {
 }
 
 function afficherVictoire(numeroJoueur) {
-    message.innerHTML = `<h3>Joueur ${numeroJoueur} a gagné !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>`;
+    let NomJoueur = (numeroJoueur === 1) ? nomJoueur1 : nomJoueur2;
+    contenuMessage.innerHTML = `<h3>${NomJoueur} a gagné !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>`;
     message.classList.replace('invisible', 'succes');
     joueur1.style.visibility = "hidden";
     joueur2.style.visibility = "hidden";
+}
+
+function closeMessage() {
+    message.classList.remove("erreur", "succes", "info");
+    message.classList.add("invisible");
 }
