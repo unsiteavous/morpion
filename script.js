@@ -19,7 +19,7 @@ let solutions = [
     ["20", "21", "22"],
     ["00", "10", "20"],
     ["01", "11", "21"],
-    ["20", "21", "22"],
+    ["02", "12", "22"],
     ["00", "11", "22"],
     ["02", "11", "20"],
 ]
@@ -99,13 +99,14 @@ function victoire() {
             victoire += morpion[ligneMorpion][colonneMorpion];
 
         }
+        console.log('=====')
         console.log(victoire)
         if (victoire === "111") {
-            afficherVictoire('1');
+            afficherVictoire(1);
             matchNul = false;
             break dance;
         } else if (victoire === "222") {
-            afficherVictoire('2');
+            afficherVictoire(2);
             matchNul = false;
             break dance;
         }
@@ -144,7 +145,12 @@ function changerJoueur(joueur) {
 }
 
 function afficherVictoire(numeroJoueur) {
+    console.log(numeroJoueur)
+    console.log(nomJoueur1)
+    console.log(nomJoueur2)
+
     let NomJoueur = (numeroJoueur === 1) ? nomJoueur1 : nomJoueur2;
+    console.log(NomJoueur)
     contenuMessage.innerHTML = `<h3>${NomJoueur} a gagné !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>`;
     message.classList.replace('invisible', 'succes');
     joueur1.style.visibility = "hidden";
