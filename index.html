@@ -10,28 +10,46 @@
 </head>
 
 <body>
-    <div id="joueur1" class="joueur">
-        <h2>Joueur 1</h2>
-        <p>À ton tour !</p>
+    <div id="prenoms">
+        <div id="nomJoueur1">
+            <h3>Quel sera le nom du premier joueur ?</h3>
+            <input type="text" id="valeurJoueur1" required autofocus>
+            <p class="bouton" onclick="enregistrerPrenom(1)">Valider</p>
+        </div>
+        <div id="nomJoueur2" class="none">
+            <h3 for="joueur2">Quel sera le nom du second joueur ?</h3>
+            <input type="text" id="valeurJoueur2" required>
+            <p class="bouton" onclick="enregistrerPrenom(2)">Valider</p>
+        </div>
     </div>
-    <div id="joueur2" class="joueur hidden">
-        <h2>Joueur 2</h2>
-        <p>À ton tour !</p>
+    <div id="plateau" class="invisible">
+        <div id="joueur1" class="joueur">
+            <h2>Joueur 1</h2>
+            <p>À ton tour !</p>
+        </div>
+        <div id="joueur2" class="joueur hidden">
+            <h2>Joueur 2</h2>
+            <p>À ton tour !</p>
+        </div>
+        <div id="message" class="invisible">
+            <span id="closeMessage" onclick="closeMessage()">🞫</span>
+            <div id="contenuMessage"></div>
+        </div>
+        <div id="morpion">
+            <div id="00" class="case" onclick="selectCase('00')"></div>
+            <div id="01" class="case" onclick="selectCase('01')"></div>
+            <div id="02" class="case" onclick="selectCase('02')"></div>
+            <div id="10" class="case" onclick="selectCase('10')"></div>
+            <div id="11" class="case" onclick="selectCase('11')"></div>
+            <div id="12" class="case" onclick="selectCase('12')"></div>
+            <div id="20" class="case" onclick="selectCase('20')"></div>
+            <div id="21" class="case" onclick="selectCase('21')"></div>
+            <div id="22" class="case" onclick="selectCase('22')"></div>
+        </div>
     </div>
-    <div id="message" class="invisible">
 
-    </div>
-    <div id="morpion">
-        <div id="00" class="case" onclick="selectCase('00')"></div>
-        <div id="01" class="case" onclick="selectCase('01')"></div>
-        <div id="02" class="case" onclick="selectCase('02')"></div>
-        <div id="10" class="case" onclick="selectCase('10')"></div>
-        <div id="11" class="case" onclick="selectCase('11')"></div>
-        <div id="12" class="case" onclick="selectCase('12')"></div>
-        <div id="20" class="case" onclick="selectCase('20')"></div>
-        <div id="21" class="case" onclick="selectCase('21')"></div>
-        <div id="22" class="case" onclick="selectCase('22')"></div>
-    </div>
+    <p>Made with ❤️ by <a href="https://unsiteavous.fr/" target="_blank">UnSiteAVous</a>. View code on <a
+            href="https://github.com/unsiteavous/morpion" target="_blank">github</a>.</p>
 </body>
 
 </html>
