@@ -63,7 +63,6 @@ function enregistrerPion(idCase, joueur, ligne, colonne) {
             morpion[ligne][colonne] = joueur;
             placerPionPlateau(joueur, idCase);
         } else {
-            console.log("Cette case est déjà remplie");
             contenuMessage.innerHTML = "<h3>Cette case est déjà remplie.</h3>";
             message.classList.replace('invisible', 'erreur');
             setTimeout(() => {
@@ -99,8 +98,6 @@ function victoire() {
             victoire += morpion[ligneMorpion][colonneMorpion];
 
         }
-        console.log('=====')
-        console.log(victoire)
         if (victoire === "111") {
             afficherVictoire(1);
             matchNul = false;
@@ -145,12 +142,7 @@ function changerJoueur(joueur) {
 }
 
 function afficherVictoire(numeroJoueur) {
-    console.log(numeroJoueur)
-    console.log(nomJoueur1)
-    console.log(nomJoueur2)
-
     let NomJoueur = (numeroJoueur === 1) ? nomJoueur1 : nomJoueur2;
-    console.log(NomJoueur)
     contenuMessage.innerHTML = `<h3>${NomJoueur} a gagné !</h3><p class='bouton' onclick='location.reload()'>Rejouer</p>`;
     message.classList.replace('invisible', 'succes');
     joueur1.style.visibility = "hidden";
