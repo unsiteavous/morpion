@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion</title>
+    <link rel="stylesheet" href="style.css" preload>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="joueur1" class="joueur">
+        <h2>Joueur 1</h2>
+        <p>À ton tour !</p>
+    </div>
+    <div id="joueur2" class="joueur hidden">
+        <h2>Joueur 2</h2>
+        <p>À ton tour !</p>
+    </div>
+    <div id="message" class="invisible">
+
+    </div>
+    <div id="morpion">
+        <div id="00" class="case" onclick="selectCase('00')"></div>
+        <div id="01" class="case" onclick="selectCase('01')"></div>
+        <div id="02" class="case" onclick="selectCase('02')"></div>
+        <div id="10" class="case" onclick="selectCase('10')"></div>
+        <div id="11" class="case" onclick="selectCase('11')"></div>
+        <div id="12" class="case" onclick="selectCase('12')"></div>
+        <div id="20" class="case" onclick="selectCase('20')"></div>
+        <div id="21" class="case" onclick="selectCase('21')"></div>
+        <div id="22" class="case" onclick="selectCase('22')"></div>
+    </div>
+</body>
+
+</html>
