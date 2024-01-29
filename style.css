@@ -118,3 +118,8 @@ body {
   width: 100px;
   transition: 0.5s;
 }
+
+body > p {
+  text-align: right;
+  margin-right: 10px;
+}
