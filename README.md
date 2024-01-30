@@ -6,8 +6,9 @@ Exercice JS, construire la logique et les interactions avec les utilisateurs.
 ### A) Préparation du plateau
 1. Télécharger les fichiers html et css. Le script sera à créer entièrement, celui qui est ici est la correction.
 2. D'abord, on anime les blocs HTML lors des clics sur les boutons "valider", pour faire disparaître nomJoueur1 et apparaître nomJoueur2, puis tout le bloc prenoms pour laisser la place au plateau. Utiliser les classes existantes.
-3. Ensuite, récupérer les prénoms des inputs, et les stocker dans deux variables.
-4. Faire apparaître les noms choisis par les joueurs dans les <h2> des deux joueurs.
+3. Faire en sorte que l'on puisse passer à l'étape d'après que si les inputs ne sont pas vides.
+4. Ensuite, récupérer les prénoms des inputs, et les stocker dans deux variables.
+5. Faire apparaître les noms choisis par les joueurs dans les <h2> des deux joueurs.
 
 ### B) Animation du plateau
 1. Faire en sorte qu'à chaque clic sur une case, la fonction selectCase appelle une autre fonction pour qu'il y ait une animation (représentée par la classee "clicked"), qui dure 0.2s avant d'être enlevée.

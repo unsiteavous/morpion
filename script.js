@@ -25,18 +25,26 @@ let solutions = [
 ]
 
 function enregistrerPrenom(numeroJoueur) {
-    if (numeroJoueur === 1) {
-        nomJoueur1 = document.getElementById('valeurJoueur1').value;
-        encartNomJoueur1.classList.add('none');
-        encartNomJoueur2.classList.remove('none');
-    } else if (numeroJoueur === 2) {
-        nomJoueur2 = document.getElementById('valeurJoueur2').value;
-        document.getElementById('prenoms').classList.add('none');
-        document.getElementById('plateau').classList.remove('invisible');
-        joueur1.querySelector('h2').innerHTML = nomJoueur1;
-        joueur2.querySelector('h2').innerHTML = nomJoueur2;
+    const inputJoueur = document.getElementById('valeurJoueur'+numeroJoueur);
+    if (inputJoueur.value !== "") {
+        let nomJoueur = inputJoueur.value;
+        if (numeroJoueur === 1) {
+            encartNomJoueur1.classList.add('none');
+            encartNomJoueur2.classList.remove('none');
+            joueur1.querySelector('h2').innerHTML = nomJoueur;
+        } else if (numeroJoueur === 2) {
+            document.getElementById('plateau').classList.remove('invisible');
+            document.getElementById('prenoms').classList.add('none');
+            joueur2.querySelector('h2').innerHTML = nomJoueur;
+        } 
+    } else {
+        let erreur = document.createElement('p');
+        erreur.textContent = "Veuillez choisir un prénom avant de continuer.";
+        erreur.classList.add('erreur');
+        erreur.id = 'alert-prenom-obligatoire';
+        inputJoueur.after(erreur);
+        setTimeout(() => { document.getElementById('alert-prenom-obligatoire').remove() }, 2000);
     }
-
 }
 
 function selectCase(idCase) {
