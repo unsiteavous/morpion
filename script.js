@@ -27,15 +27,16 @@ let solutions = [
 function enregistrerPrenom(numeroJoueur) {
     const inputJoueur = document.getElementById('valeurJoueur'+numeroJoueur);
     if (inputJoueur.value !== "") {
-        let nomJoueur = inputJoueur.value;
         if (numeroJoueur === 1) {
+            nomJoueur1 = inputJoueur.value;
             encartNomJoueur1.classList.add('none');
             encartNomJoueur2.classList.remove('none');
-            joueur1.querySelector('h2').innerHTML = nomJoueur;
+            joueur1.querySelector('h2').innerHTML = nomJoueur1;
         } else if (numeroJoueur === 2) {
+            nomJoueur2 = inputJoueur.value;
             document.getElementById('plateau').classList.remove('invisible');
             document.getElementById('prenoms').classList.add('none');
-            joueur2.querySelector('h2').innerHTML = nomJoueur;
+            joueur2.querySelector('h2').innerHTML = nomJoueur2;
         } 
     } else {
         let erreur = document.createElement('p');
