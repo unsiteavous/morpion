@@ -41,10 +41,7 @@ function enregistrerPrenom(numeroJoueur) {
 
 function selectCase(idCase) {
     animationClic(idCase);
-    let ligne = idCase.split('')[0];
-    let colonne = idCase.split('')[1];
-
-    enregistrerPion(idCase, joueur, ligne, colonne);
+    enregistrerPion(idCase, joueur);
     joueur = changerJoueur(joueur);
     victoire();
 }
@@ -56,7 +53,9 @@ function animationClic(idCase) {
     }, 200)
 }
 
-function enregistrerPion(idCase, joueur, ligne, colonne) {
+function enregistrerPion(idCase, joueur) {
+    let ligne = idCase.split('')[0];
+    let colonne = idCase.split('')[1];
     // On vérifie avant de placer le pion, que le joueur peut bien jouer.
     if (!verifierToutesCasesRemplies()) {
         if (morpion[ligne][colonne] === 0) {
