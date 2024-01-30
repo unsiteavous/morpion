@@ -31,4 +31,4 @@ séparer (split) ces deux chiffres, et enregistrer chaque action des joueurs au 
 9. Pour chaque solution, vérifier si dans le tableau morpion, il n'y a que des 1 (dans ce cas, joueur 1 a gagné), ou des 2 (c'est joueur 2 qui a gagné), et afficher dans la console la victoire.
 10. Tout ce qui est affiché dans la console doit maintenant être affiché à l'utilisateur. Pour cela, utiliser la div "message", lui donner le texte que vous voulez, et choisir dans le css la classe qui vous convient pour chaque catégorie de message : erreur, succes, info.
 11. Lors d'un match nul ou d'une victoire, mettre un bouton "rejouer" avec la classe qui convient, et au clic sur ce bouton, recharger la page.
-12. Enfin, ajouter une croix pour fermer la popup "message", pour permettre aux joueurs de voir leurs coups. 
+12. Enfin, ajouter une croix pour fermer la popup "message", pour permettre aux joueurs de revoir leurs coups. 
