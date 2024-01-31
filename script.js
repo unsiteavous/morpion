@@ -25,19 +25,19 @@ let solutions = [
 ]
 
 function enregistrerPrenom(numeroJoueur) {
-    const inputJoueur = document.getElementById('valeurJoueur'+numeroJoueur);
+    const inputJoueur = document.getElementById('valeurJoueur' + numeroJoueur);
     if (inputJoueur.value !== "") {
         if (numeroJoueur === 1) {
             nomJoueur1 = inputJoueur.value;
             encartNomJoueur1.classList.add('none');
             encartNomJoueur2.classList.remove('none');
-            joueur1.querySelector('h2').innerHTML = nomJoueur1;
+            joueur1.querySelector('h2').textContent = nomJoueur1;
         } else if (numeroJoueur === 2) {
             nomJoueur2 = inputJoueur.value;
             document.getElementById('plateau').classList.remove('invisible');
             document.getElementById('prenoms').classList.add('none');
             joueur2.querySelector('h2').innerHTML = nomJoueur2;
-        } 
+        }
     } else {
         let erreur = document.createElement('p');
         erreur.textContent = "Veuillez choisir un prénom avant de continuer.";
@@ -129,9 +129,9 @@ function victoire() {
 function placerPionPlateau(joueur, selectedCase) {
     selectedCase = document.getElementById(selectedCase);
     if (joueur === 1) {
-        selectedCase.innerHTML = "X";
+        selectedCase.textContent = "X";
     } else {
-        selectedCase.innerHTML = "O";
+        selectedCase.textContent = "O";
 
     }
 }
