@@ -3,6 +3,11 @@ body {
 
 }
 
+body > p {
+  text-align: right;
+  margin-right: 10px;
+}
+
 #morpion {
     width: 35vw;
     background-color: purple;
@@ -133,11 +138,6 @@ body {
   padding: 10px;
   width: 100px;
   transition: 0.5s;
-}
-
-body > p {
-  text-align: right;
-  margin-right: 10px;
 }
 
 #closeMessage {
