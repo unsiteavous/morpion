@@ -15,12 +15,12 @@
     <div id="prenoms">
         <div id="nomJoueur1">
             <h3>Quel sera le nom du premier joueur ?</h3>
-            <input type="text" id="valeurJoueur1" required autofocus>
+            <input type="text" id="valeurJoueur1" required autofocus onkeypress="if (event.keyCode==13) enregistrerPrenom(1);">
             <p class="bouton" onclick="enregistrerPrenom(1)">Valider</p>
         </div>
         <div id="nomJoueur2" class="none">
             <h3 for="joueur2">Quel sera le nom du second joueur ?</h3>
-            <input type="text" id="valeurJoueur2" required>
+            <input type="text" id="valeurJoueur2" required onkeypress="if (event.keyCode==13) enregistrerPrenom(2);">
             <p class="bouton" onclick="enregistrerPrenom(2)">Valider</p>
         </div>
     </div>

@@ -24,6 +24,9 @@ let solutions = [
     ["02", "11", "20"],
 ]
 
+// document.getElementById('valeurJoueur1').addEventListener('onkeypress', enregistrerPrenom.bind('',1));
+// document.getElementById('valeurJoueur2').addEventListener('onkeypress', enregistrerPrenom.bind('',2));
+
 function enregistrerPrenom(numeroJoueur) {
     const inputJoueur = document.getElementById('valeurJoueur' + numeroJoueur);
     if (inputJoueur.value !== "") {
@@ -32,6 +35,7 @@ function enregistrerPrenom(numeroJoueur) {
             encartNomJoueur1.classList.add('none');
             encartNomJoueur2.classList.remove('none');
             joueur1.querySelector('h2').textContent = nomJoueur1;
+            encartNomJoueur2.querySelector('input').focus();
         } else if (numeroJoueur === 2) {
             nomJoueur2 = inputJoueur.value;
             document.getElementById('plateau').classList.remove('invisible');
