@@ -54,9 +54,10 @@ function enregistrerPrenom(numeroJoueur) {
 
 function selectCase(idCase) {
     animationClic(idCase);
-    enregistrerPion(idCase, joueur);
-    joueur = changerJoueur(joueur);
-    victoire();
+    if (enregistrerPion(idCase, joueur)) {
+        joueur = changerJoueur(joueur);
+        victoire();
+    }
 }
 
 function animationClic(idCase) {
@@ -80,9 +81,11 @@ function enregistrerPion(idCase, joueur) {
             setTimeout(() => {
                 message.classList.replace('erreur', 'invisible');
             }, 2000);
+            return false;
         }
 
     }
+    return true;
 }
 
 function verifierToutesCasesRemplies() {
